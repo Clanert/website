@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clanert Sustain | Air Quality Monitoring</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    :root { --primary-color: #2c3c94; }
+  </style>
+
+  <style>
+    body {
+      font-size: 14px;
+    }
+
+    @media (min-width: 640px) {
+      body {
+        font-size: 15px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        font-size: 17px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      body {
+        font-size: 18px;
+      }
+    }
+  </style>
+ 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const nav = document.querySelector('header');
+    const navBar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('nav a');
+
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 50) {
+        nav.classList.add('bg-white', 'shadow-md');
+        navBar.classList.remove('bg-transparent');
+        navBar.classList.add('bg-white');
+        navLinks.forEach(link => {
+  link.classList.remove('text-white');
+  link.classList.add('text-[#8bc33c]');
+});
+      } else {
+        nav.classList.remove('bg-white', 'shadow-md');
+        navBar.classList.add('bg-transparent');
+        navBar.classList.remove('bg-white');
+        navLinks.forEach(link => {
+  link.classList.remove('text-[#8bc33c]');
+  link.classList.add('text-white');
+});
+      }
+    });
+  });
+</script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <script>
+  AOS.init();
+</script>
+
+  <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
+<!-- Navigation Bar -->
+<header class="w-full fixed top-0 z-50">
+  <div id="navbar" class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 rounded-full mt-4 transition-all duration-300 bg-transparent">
+    <img src="https://i.ibb.co/Z8VjzNV/CLANERT-SUSTAIN-logo-fin-AL.png" alt="Clanert Sustain Logo" class="h-10">
+
+    <!-- Hamburger button (small screens) -->
+    <button id="menu-toggle" class="md:hidden text-[#8bc33c] focus:outline-none transition-colors duration-300">
+      <svg xmlns="http://www.w3.org/2000/svg" id="hamburger-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex space-x-6 font-semibold transition-colors duration-300">
+      <a href="#problem" class="hover:underline">Problem</a>
+      <a href="#how" class="hover:underline">How We Solve It</a>
+      <a href="#projects" class="hover:underline">Projects</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="md:hidden fixed top-20 left-4 right-4 bg-white text-[#2c3c94] shadow-lg rounded-lg py-4 px-6 space-y-4 hidden z-50">
+    <a href="#problem" class="block font-semibold hover:underline">Problem</a>
+    <a href="#how" class="block font-semibold hover:underline">How We Solve It</a>
+    <a href="#projects" class="block font-semibold hover:underline">Projects</a>
+    <a href="#contact" class="block font-semibold hover:underline">Contact</a>
+  </div>
+</header>
+
+
+
+ <!-- Hero Section -->
+<section class="min-h-screen bg-cover bg-center relative text-white" style="background-image: url('https://i.ibb.co/WpdpjJG/IMG-2158.jpg');">
+  <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center px-4 text-center" data-aos="fade-up">
+
+    <!-- Headline -->
+    <h1 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-4 leading-tight max-w-[90%]">
+      We Monitor Air, You Manage Health.
+    </h1>
+
+    <!-- Subheading -->
+    <p class="text-sm sm:text-base md:text-lg mb-6 max-w-md">
+      We empower governments, industries, and cities to track and reduce air pollution with real-time monitoring.
+    </p>
+
+    <!-- CTA Button -->
+    <a href="#how" class="bg-white text-[#2c3c94] font-bold py-2 px-5 rounded hover:bg-gray-200 transition text-sm sm:text-base">
+      Discover Our Solution
+    </a>
+
+    <!-- Info Cards (hidden on small screens) -->
+    <div class="hidden sm:grid mt-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-5xl px-4">
+      <div class="bg-white/80 backdrop-blur-md text-[#2c3c94] p-4 sm:p-6 rounded-xl shadow-lg">
+        <h3 class="text-lg font-bold mb-2">
+          <span class="text-[#2c3c94]">We</span> <span class="text-[#8bc33c]">Work</span>
+        </h3>
+        <p class="text-sm text-black">Continuously reduce environmental pollution.</p>
+      </div>
+
+      <div class="bg-white/80 backdrop-blur-md text-[#2c3c94] p-4 sm:p-6 rounded-xl shadow-lg">
+        <h3 class="text-lg font-bold mb-2">
+          <span class="text-[#2c3c94]">We</span> <span class="text-[#8bc33c]">Enable</span>
+        </h3>
+        <p class="text-sm text-black">Empower communities and decision makers with data.</p>
+      </div>
+
+      <div class="bg-white/80 backdrop-blur-md text-[#2c3c94] p-4 sm:p-6 rounded-xl shadow-lg">
+        <h3 class="text-lg font-bold mb-2">
+          <span class="text-[#2c3c94]">We</span> <span class="text-[#8bc33c]">Protect</span>
+        </h3>
+        <p class="text-sm text-black">Safeguard air quality and public health nationwide.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Industries Section -->
+<section class="py-16 sm:py-20 bg-[#f9f9f9] text-center px-4">
+  <h2 class="text-2xl sm:text-3xl font-bold mb-2">
+    <span class="text-[#2c3c94]">Precision</span> <span class="text-[#8bc33c]">Monitoring Solutions</span>
+  </h2>
+  <p class="text-sm sm:text-base text-gray-500 mb-4">FOR A WIDE RANGE OF INDUSTRIES</p>
+  <p class="text-sm sm:text-base max-w-3xl mx-auto mb-6 sm:mb-10 text-gray-700">
+    Our long-established expertise in air quality and environmental monitoring has made Clanert Sustain a trusted choice for regulatory bodies, industries, and research. Our monitoring systems deliver accurate, real-time data to help professionals make informed decisions across a variety of sectors.
+  </p>
+  <p class="italic text-gray-600 text-sm sm:text-base mb-8 sm:mb-12">We Work With...</p>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    
+    <!-- Card -->
+    <div class="relative group overflow-hidden rounded shadow-lg transform transition-transform duration-500 hover:scale-105">
+      <img src="https://i.ibb.co/LzXCTHBr/pexels-rezwan-1087083.jpg" class="w-full h-44 sm:h-48 object-cover">
+      <div class="absolute inset-0 bg-blue-700/40 text-white flex items-end p-4 transition-transform duration-500 transform group-hover:-translate-y-2">
+        <span class="font-semibold text-sm sm:text-base">Manufacturing & Industrial</span>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="relative group overflow-hidden rounded shadow-lg transform transition-transform duration-500 hover:scale-105">
+      <img src="https://i.ibb.co/BVxdZZ7Q/pexels-kawserhamid-176342.jpg" class="w-full h-44 sm:h-48 object-cover">
+      <div class="absolute inset-0 bg-blue-700/40 text-white flex items-end p-4 transition-transform duration-500 transform group-hover:-translate-y-2">
+        <span class="font-semibold text-sm sm:text-base">Construction</span>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="relative group overflow-hidden rounded shadow-lg transform transition-transform duration-500 hover:scale-105">
+      <img src="https://i.ibb.co/3mmP88S7/pexels-khunkorn-laowisit-1359149-5233283.jpg" class="w-full h-44 sm:h-48 object-cover">
+      <div class="absolute inset-0 bg-blue-700/40 text-white flex items-end p-4 transition-transform duration-500 transform group-hover:-translate-y-2">
+        <span class="font-semibold text-sm sm:text-base">Transport</span>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="relative group overflow-hidden rounded shadow-lg transform transition-transform duration-500 hover:scale-105">
+      <img src="https://i.ibb.co/YTNT6MyZ/pexels-pixabay-257700.jpg" class="w-full h-44 sm:h-48 object-cover">
+      <div class="absolute inset-0 bg-blue-700/40 text-white flex items-end p-4 transition-transform duration-500 transform group-hover:-translate-y-2">
+        <span class="font-semibold text-sm sm:text-base">Oil Industry</span>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="relative group overflow-hidden rounded shadow-lg transform transition-transform duration-500 hover:scale-105">
+      <img src="https://i.ibb.co/rCX0576/pexels-alejandro-barron-21404-96715.jpg" class="w-full h-44 sm:h-48 object-cover">
+      <div class="absolute inset-0 bg-blue-700/40 text-white flex items-end p-4 transition-transform duration-500 transform group-hover:-translate-y-2">
+        <span class="font-semibold text-sm sm:text-base">Agriculture</span>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="relative group overflow-hidden rounded shadow-lg transform transition-transform duration-500 hover:scale-105">
+      <img src="https://i.ibb.co/gMr7DC5R/pexels-apasaric-1238864.jpg" class="w-full h-44 sm:h-48 object-cover">
+      <div class="absolute inset-0 bg-blue-700/40 text-white flex items-end p-4 transition-transform duration-500 transform group-hover:-translate-y-2">
+        <span class="font-semibold text-sm sm:text-base">Mining</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Problem Section -->
+<section class="py-20 bg-[#f1f5ff] text-center">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10"><span class="text-[#2c3c94]">The Pollution</span> <span class="text-[#8bc33c]">Problems We Tackle</span></h2>
+    <div class="space-y-20">
+      <div class="flex flex-col md:flex-row items-center gap-10" data-aos="fade-right">
+        <img src="https://i.ibb.co/20Rgx0Hb/airq-1.png" alt="Air Pollution" class="w-full md:w-1/2 rounded-lg shadow-lg">
+        <div class="text-left md:w-1/2">
+          <h3 class="text-2xl font-semibold text-[#2c3c94]">Air Quality</h3>
+          <p class="text-gray-700">Tanzania's urban areas face increasing concentrations of PM2.5, NOx, SOx, and ozone, driven by industrialization and poor waste burning practices.</p>
+          <ul class="list-disc list-inside text-left text-gray-600 mt-2">
+            <li>PM2.5 levels exceed WHO thresholds</li>
+            <li>Lack of localized monitoring stations</li>
+            <li>Low public awareness and enforcement</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row-reverse items-center gap-10" data-aos="fade-left">
+        <img src="https://i.ibb.co/1hyndHP/what-is-a-sound-level-meter.png" alt="Acoustic Pollution" class="w-full md:w-1/2 rounded-lg shadow-lg">
+        <div class="text-left md:w-1/2">
+          <h3 class="text-2xl font-semibold text-[#2c3c94]">Acoustic Pollution</h3>
+          <p class="text-gray-700">Noise and vibration in urban and construction zones are increasing, leading to hearing loss, stress, and reduced quality of life.</p>
+          <ul class="list-disc list-inside text-left text-gray-600 mt-2">
+            <li>Transport and construction exceed safe thresholds</li>
+            <li>No comprehensive noise maps</li>
+            <li>Overlooked in EIAs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="problem" class="py-20 bg-[#f1f5ff] text-center">
+  <div class="max-w-5xl mx-auto" data-aos="fade-up">
+    <h2 class="text-3xl font-bold mb-6"><span class="text-[#2c3c94]">Why Air</span> <span class="text-[#8bc33c]">Quality Matters</span></h2>
+    <p class="text-lg text-gray-700 mb-4">Air pollution is a silent killer, affecting both developed and developing countries. In Tanzania, major urban centers face significant pollution threats from vehicles, waste, and dust.</p>
+    <div class="grid md:grid-cols-2 gap-8 mt-8 items-center">
+      <div class="text-left px-6">
+        <ol class="relative border-l-4 border-[#2c3c94] ml-4 space-y-6">
+          <li class="ml-4">
+            <div class="absolute w-4 h-4 bg-[#2c3c94] rounded-full -left-2.5 top-1.5"></div>
+            <h4 class="font-bold text-[#2c3c94]">Health Impact (Global)</h4>
+            <p class="text-gray-700">According to WHO, air pollution causes <strong>7 million premature deaths annually</strong> worldwide.</p>
+          </li>
+          <li class="ml-4">
+            <div class="absolute w-4 h-4 bg-[#2c3c94] rounded-full -left-2.5 top-1.5"></div>
+            <h4 class="font-bold text-[#2c3c94]">Urban Air Crisis</h4>
+            <p class="text-gray-700">Dar es Salaam frequently exceeds WHO's safe air limits by 500%, due to transport, industry and open burning.</p>
+          </li>
+          <li class="ml-4">
+            <div class="absolute w-4 h-4 bg-[#2c3c94] rounded-full -left-2.5 top-1.5"></div>
+            <h4 class="font-bold text-[#2c3c94]">Lack of Monitoring</h4>
+<p class="text-gray-700">Tanzania lacks a national network of real-time air quality monitoring stations, making it difficult to respond effectively to pollution threats.</p>
+          </li>
+          <li class="ml-4">
+            <div class="absolute w-4 h-4 bg-[#2c3c94] rounded-full -left-2.5 top-1.5"></div>
+            <h4 class="font-bold text-[#2c3c94]">Climate & Policy Link</h4>
+            <p class="text-gray-700">Air pollution also contributes to global warming and undermines Tanzania's Nationally Determined Contributions (NDCs).</p>
+          </li>
+        </ol>
+        <p class="mt-6 text-sm italic text-gray-600">Source: WHO Global Air Quality Report 2022</p>
+      </div>
+      <div class="flex justify-center">
+        <img src="https://i.ibb.co/nqSSRHX5/weatthsdf.png" alt="Air Quality Map" class="rounded-lg shadow-lg w-full max-w-sm">
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- How We Solve It Section -->
+<section id="how" class="py-16 sm:py-20 relative text-center bg-white px-4">
+  <!-- Background Shape Overlay -->
+  <div class="absolute inset-0 bg-white/90 z-0" style="background-image: url('https://i.ibb.co/ZRMCWPz0/abstract-shape.png'); background-size: cover; background-position: center; background-repeat: no-repeat; opacity: 0.05;"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl font-bold mb-12" data-aos="fade-down">
+      <span class="text-[#2c3c94]">How We</span> <span class="text-[#8bc33c]">Solve It</span>
+    </h2>
+
+    <div class="flex flex-col items-center space-y-12 text-sm sm:text-base">
+
+      <!-- Step 1 -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-left" data-aos="fade-right">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-[#2c3c94] text-white text-lg font-bold rounded-full flex items-center justify-center shadow-lg">1</div>
+        <div class="max-w-xl">
+          <h3 class="text-xl sm:text-2xl font-semibold text-[#2c3c94] mb-2">Identify the Source</h3>
+          <p class="text-gray-700 leading-relaxed">Pinpoint key pollution sources such as transport, industry, and burning waste.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-left" data-aos="fade-left">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-[#2c3c94] text-white text-lg font-bold rounded-full flex items-center justify-center shadow-lg">2</div>
+        <div class="max-w-xl">
+          <h3 class="text-xl sm:text-2xl font-semibold text-[#2c3c94] mb-2">Deploy Monitoring</h3>
+          <p class="text-gray-700 leading-relaxed">Install field-tested air and noise monitors at affected locations.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-left" data-aos="fade-right">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-[#2c3c94] text-white text-lg font-bold rounded-full flex items-center justify-center shadow-lg">3</div>
+        <div class="max-w-xl">
+          <h3 class="text-xl sm:text-2xl font-semibold text-[#2c3c94] mb-2">Sample the Air</h3>
+          <p class="text-gray-700 leading-relaxed">Collect particulate and gaseous data using calibrated instruments.</p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-left" data-aos="fade-left">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-[#2c3c94] text-white text-lg font-bold rounded-full flex items-center justify-center shadow-lg">4</div>
+        <div class="max-w-xl">
+          <h3 class="text-xl sm:text-2xl font-semibold text-[#2c3c94] mb-2">Analyze</h3>
+          <p class="text-gray-700 leading-relaxed">Use scientific methods to interpret trends and health impacts.</p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-left" data-aos="fade-right">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-[#2c3c94] text-white text-lg font-bold rounded-full flex items-center justify-center shadow-lg">5</div>
+        <div class="max-w-xl">
+          <h3 class="text-xl sm:text-2xl font-semibold text-[#2c3c94] mb-2">Report</h3>
+          <p class="text-gray-700 leading-relaxed">Communicate results through dashboards and regulatory reports.</p>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 text-left" data-aos="fade-left">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-[#2c3c94] text-white text-lg font-bold rounded-full flex items-center justify-center shadow-lg">6</div>
+        <div class="max-w-xl">
+          <h3 class="text-xl sm:text-2xl font-semibold text-[#2c3c94] mb-2">Mitigate or Monitor</h3>
+          <p class="text-gray-700 leading-relaxed">Propose mitigation solutions and continue monitoring air and sound pollution.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-24 bg-white text-center">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">
+      <span class="text-[#2c3c94]">Recent</span> <span class="text-[#8bc33c]">Projects</span>
+    </h2>
+
+    <div class="swiper projectsSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="w-full h-full max-h-[450px] overflow-hidden rounded-lg shadow-lg">
+              <img src="https://i.ibb.co/1fjXvFNt/air-quality-and-noise-assessment-arusha-coffee-lodge-2025.jpg" class="w-full h-full object-cover object-center" alt="Arusha Coffee Lodge" />
+            </div>
+            <div class="text-left space-y-3 px-6">
+              <h3 class="text-2xl font-semibold text-[#2c3c94]">Arusha Coffee Lodge - 2025</h3>
+              <p class="text-gray-700 text-base leading-relaxed">Air and noise quality assessment to protect hospitality environments. Ensured comfort standards for tourists and staff.</p>
+              <p class="text-sm text-gray-500 mt-1">Location: Arusha | Sector: Tourism</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="w-full h-full max-h-[450px] overflow-hidden rounded-lg shadow-lg">
+              <img src="https://i.ibb.co/mFgJr40g/air-quality-and-noise-assessment-for-rad-construction.jpg" class="w-full h-full object-cover object-center" alt="RAD Construction" />
+            </div>
+            <div class="text-left space-y-3 px-6">
+              <h3 class="text-2xl font-semibold text-[#2c3c94]">Road Construction</h3>
+              <p class="text-gray-700 text-base leading-relaxed">Noise and air quality monitoring to assess risks during construction in urban zones of Dar es Salaam.</p>
+              <p class="text-sm text-gray-500 mt-1">Location: Dar es Salaam | Sector: Construction</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="w-full h-full max-h-[450px] overflow-hidden rounded-lg shadow-lg">
+              <img src="https://i.ibb.co/WWcwwhH6/air-quality-and-noise-assessment-Hydropower-Plant-Malagarasi-Kigoma-2025.jpg" class="w-full h-full object-cover object-center" alt="Malagarasi Hydropower" />
+            </div>
+            <div class="text-left space-y-3 px-6">
+              <h3 class="text-2xl font-semibold text-[#2c3c94]">Malagarasi Hydropower - 2025</h3>
+              <p class="text-gray-700 text-base leading-relaxed">Baseline air and acoustic monitoring for hydropower project EIA approval.</p>
+              <p class="text-sm text-gray-500 mt-1">Location: Kigoma | Sector: Energy</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="w-full h-full max-h-[450px] overflow-hidden rounded-lg shadow-lg">
+              <img src="https://i.ibb.co/cXgZB0Wc/air-quality-and-noise-assessment-Mufindi-paper-mill-Kigoma.jpg" class="w-full h-full object-cover object-center" alt="Mufindi Paper Mill" />
+            </div>
+            <div class="text-left space-y-3 px-6">
+              <h3 class="text-2xl font-semibold text-[#2c3c94]">Mufindi Paper Mill</h3>
+              <p class="text-gray-700 text-base leading-relaxed">Emission and noise level monitoring for sustainable manufacturing and compliance.</p>
+              <p class="text-sm text-gray-500 mt-1">Location: Mufindi | Sector: Manufacturing</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="w-full h-full max-h-[450px] overflow-hidden rounded-lg shadow-lg">
+              <img src="https://i.ibb.co/1t84PNkL/air-quality-and-noise-assessment-road-construction-Zannzibar-2025.jpg" class="w-full h-full object-cover object-center" alt="Zanzibar Road Project" />
+            </div>
+            <div class="text-left space-y-3 px-6">
+              <h3 class="text-2xl font-semibold text-[#2c3c94]">Zanzibar Road Project - 2025</h3>
+              <p class="text-gray-700 text-base leading-relaxed">Community noise and air quality assessment for coastal infrastructure development.</p>
+              <p class="text-sm text-gray-500 mt-1">Location: Zanzibar | Sector: Infrastructure</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="swiper-slide">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div class="w-full h-full max-h-[450px] overflow-hidden rounded-lg shadow-lg">
+              <img src="https://i.ibb.co/yng8Sx30/air-quality-and-noise-assessment-tin-mining-project-Kyerwa-Kagera-2024.jpg" class="w-full h-full object-cover object-center" alt="Tin Mining - Kyerwa Kagera" />
+            </div>
+            <div class="text-left space-y-3 px-6">
+              <h3 class="text-2xl font-semibold text-[#2c3c94]">Tin Mining - Kyerwa Kagera</h3>
+              <p class="text-gray-700 text-base leading-relaxed">Dust and vibration monitoring in artisanal mining zones to improve safety and compliance.</p>
+              <p class="text-sm text-gray-500 mt-1">Location: Kagera | Sector: Mining</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation & Pagination -->
+      <div class="flex justify-center flex-col items-center mt-8 space-y-4">
+        <div class="flex space-x-4">
+          <div class="swiper-button-prev !text-[#2c3c94]"></div>
+          <div class="swiper-button-next !text-[#2c3c94]"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Swiper Initialization -->
+<script>
+  const swiper = new Swiper(".projectsSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 40,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  });
+</script>
+
+<!-- Company Profile Section -->
+<section id="company-profile" class="py-20 bg-[#f1f5ff] text-center">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">
+      <span class="text-[#2c3c94]">Explore</span> <span class="text-[#8bc33c]">Our Company Profile</span>
+    </h2>
+    <p class="text-gray-700 text-lg mb-6" data-aos="fade-up" data-aos-delay="100">
+      Learn more about Clanert Sustain’s mission, services, and achievements. View our complete profile including air quality monitoring, environmental audits, and sustainability leadership.
+    </p>
+    <a href="https://tr.ee/KTykViOhQ9" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#2c3c94] text-white font-semibold px-8 py-3 rounded-full hover:bg-[#1a276d] transition" data-aos="fade-up" data-aos-delay="200">
+      View Company Profile
+    </a>
+  </div>
+</section>
+<!-- Partners & Clients Section -->
+<section id="partners" class="py-20 bg-white text-center">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">
+      <span class="text-[#2c3c94]">Our</span> <span class="text-[#8bc33c]">Partners & Clients</span>
+    </h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center justify-center">
+      <img src="https://i.ibb.co/xqxLF2qB/Screenshot-2025-06-12-193408.png" alt="Partner Logo 1" class="h-16 mx-auto object-contain grayscale hover:grayscale-0 transition" />
+      <img src="https://i.ibb.co/7DC3pPy/copy-109377572.png" alt="Partner Logo 2" class="h-16 mx-auto object-contain grayscale hover:grayscale-0 transition" />
+      <img src="https://i.ibb.co/LDYP0hMn/BADREA.png" alt="Partner Logo 3" class="h-16 mx-auto object-contain grayscale hover:grayscale-0 transition" />
+      <img src="https://i.ibb.co/C3RJqV4p/Screenshot-2025-06-12-185616.png" alt="Partner Logo 4" class="h-16 mx-auto object-contain grayscale hover:grayscale-0 transition" />
+      <img src="https://i.ibb.co/jkdYHsrV/standard-chartered-bank-new-20211713.jpg" alt="Partner Logo 5" class="h-16 mx-auto object-contain grayscale hover:grayscale-0 transition" />
+      <img src="https://i.ibb.co/xqbTGqzv/download.png" alt="Partner Logo 6" class="h-16 mx-auto object-contain grayscale hover:grayscale-0 transition" />
+    </div>
+  </div>
+</section>
+
+<!-- CEO Message Section -->
+<section id="ceo-message" class="bg-white py-24 px-6">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- Image -->
+    <div data-aos="fade-right">
+      <img src="https://i.ibb.co/6JTcjWYf/Chat-GPT-Image-Jun-20-2025-04-56-02-PM.png" alt="CEO Nobert Cosmas Mrema" class="rounded-xl w-full max-w-md mx-auto md:mx-0 shadow-lg" />
+    </div>
+
+    <!-- CEO Text -->
+    <div data-aos="fade-left">
+      <h2 class="text-3xl font-bold text-[#2c3c94] mb-4"> 
+        <span class="text-[#2c3c94]">Message from </span> <span class="text-[#8bc33c]">the CEO</span>
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        At <strong>Clanert Sustain</strong>, our mission is to transform environmental challenges into smart, actionable solutions. We’re committed to science-based approaches for improving air quality, reducing noise pollution, and ensuring regulatory compliance across Tanzania and beyond.
+      </p>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        Our passion lies in supporting sustainable growth — whether in mining, construction, energy, or agriculture — while protecting the health and well-being of our people and ecosystems.
+      </p>
+      <p class="italic text-gray-600 mt-6">— Nobert Cosmas Mrema, Technical Director</p>
+    </div>
+  </div>
+
+  <!-- Core Values -->
+  <div class="mt-20 max-w-6xl mx-auto text-center" data-aos="fade-up">
+    <h3 class="text-2xl font-bold text-[#2c3c94] mb-8">Our Core Values</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      
+      <div class="bg-[#f1f5ff] p-6 rounded-lg shadow-md hover:scale-105 transition duration-300">
+        <h4 class="text-xl font-semibold text-[#8bc33c] mb-2">Integrity</h4>
+        <p class="text-gray-700 text-sm">We act with honesty, transparency, and strong moral principles.</p>
+      </div>
+
+      <div class="bg-[#f1f5ff] p-6 rounded-lg shadow-md hover:scale-105 transition duration-300">
+        <h4 class="text-xl font-semibold text-[#8bc33c] mb-2">Innovation</h4>
+        <p class="text-gray-700 text-sm">We apply science and data to build smart environmental solutions.</p>
+      </div>
+
+      <div class="bg-[#f1f5ff] p-6 rounded-lg shadow-md hover:scale-105 transition duration-300">
+        <h4 class="text-xl font-semibold text-[#8bc33c] mb-2">Sustainability</h4>
+        <p class="text-gray-700 text-sm">We commit to long-term ecological balance and impact reduction.</p>
+      </div>
+
+      <div class="bg-[#f1f5ff] p-6 rounded-lg shadow-md hover:scale-105 transition duration-300">
+        <h4 class="text-xl font-semibold text-[#8bc33c] mb-2">Collaboration</h4>
+        <p class="text-gray-700 text-sm">We work hand-in-hand with regulators, clients, and communities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="bg-[#f9f9f9] py-24 px-6">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-[#2c3c94] mb-4" data-aos="fade-down">  
+      <span class="text-[#2c3c94]">What Our</span> <span class="text-[#8bc33c]">Clients Say</span>
+    </h2>
+    <p class="text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up">
+      Our clients across Tanzania rely on our expertise to improve environmental health and compliance.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Testimonial 1 -->
+      <div class="bg-white rounded-xl shadow-md p-6 transition duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+        <p class="text-gray-700 text-base italic mb-6">
+          “Clanert Sustain helped us carry out air and noise assessments during a critical infrastructure project. Their professionalism and data-driven reports ensured our compliance and improved site safety.”
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="bg-[#8bc33c] text-white rounded-full p-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a6 6 0 100 12 6 6 0 000-12zM2 18a8 8 0 0116 0H2z"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-[#2c3c94] font-semibold">Site Supervisor</p>
+            <p class="text-sm text-gray-500">Tin Mining - Kyerwa, Kagera</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-white rounded-xl shadow-md p-6 transition duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+        <p class="text-gray-700 text-base italic mb-6">
+          ““Working with Clanert Sustain was a seamless experience. Their team demonstrated professionalism, precision, and deep technical knowledge during our indoor air quality.””
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="bg-[#8bc33c] text-white rounded-full p-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a6 6 0 100 12 6 6 0 000-12zM2 18a8 8 0 0116 0H2z"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-[#2c3c94] font-semibold">Environmental Officer</p>
+            <p class="text-sm text-gray-500">Standard Chartered – Dar es Salaam</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-white rounded-xl shadow-md p-6 transition duration-300 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
+        <p class="text-gray-700 text-base italic mb-6">
+          “Thanks to Clanert Sustain, we now understand the noise footprint of our operations. Their analysis helped us adjust operations and maintain compliance with ease.”
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="bg-[#8bc33c] text-white rounded-full p-2">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M10 2a6 6 0 100 12 6 6 0 000-12zM2 18a8 8 0 0116 0H2z"/>
+            </svg>
+          </div>
+          <div class="text-left">
+            <p class="text-[#2c3c94] font-semibold">Hydropower Consultant</p>
+            <p class="text-sm text-gray-500">Malagarasi Hydropower – Kigoma</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8">
+      <span class="text-[#2c3c94]">Contact</span> <span class="text-[#8bc33c]">Us</span>
+    </h2>
+
+    <form id="contact-form" class="space-y-6" onsubmit="sendEmail(event)">
+      <div class="grid md:grid-cols-2 gap-6">
+        <input type="text" name="name" placeholder="Full Name" required class="border border-gray-300 p-3 rounded w-full" />
+        <input type="email" name="email" placeholder="Email Address" required class="border border-gray-300 p-3 rounded w-full" />
+      </div>
+
+      <select name="region" required class="border border-gray-300 p-3 rounded w-full">
+        <option value="" disabled selected>Select Your Region</option>
+        <option value="Arusha">Arusha</option>
+        <option value="Dar es Salaam">Dar es Salaam</option>
+        <option value="Dodoma">Dodoma</option>
+        <option value="Geita">Geita</option>
+        <option value="Iringa">Iringa</option>
+        <option value="Kagera">Kagera</option>
+        <option value="Katavi">Katavi</option>
+        <option value="Kigoma">Kigoma</option>
+        <option value="Kilimanjaro">Kilimanjaro</option>
+        <option value="Lindi">Lindi</option>
+        <option value="Manyara">Manyara</option>
+        <option value="Mara">Mara</option>
+        <option value="Mbeya">Mbeya</option>
+        <option value="Morogoro">Morogoro</option>
+        <option value="Mtwara">Mtwara</option>
+        <option value="Mwanza">Mwanza</option>
+        <option value="Njombe">Njombe</option>
+        <option value="Pwani">Pwani</option>
+        <option value="Rukwa">Rukwa</option>
+        <option value="Ruvuma">Ruvuma</option>
+        <option value="Shinyanga">Shinyanga</option>
+        <option value="Simiyu">Simiyu</option>
+        <option value="Singida">Singida</option>
+        <option value="Tabora">Tabora</option>
+        <option value="Tanga">Tanga</option>
+        <option value="Zanzibar North">Zanzibar North</option>
+        <option value="Zanzibar South and Central">Zanzibar South and Central</option>
+        <option value="Zanzibar Urban/West">Zanzibar Urban/West</option>
+      </select>
+
+      <textarea name="message" rows="5" placeholder="Your Message" required class="border border-gray-300 p-3 rounded w-full"></textarea>
+
+      <div class="flex items-center">
+        <input type="checkbox" name="privacyCheck" required class="mr-2" />
+        <label for="privacyCheck" class="text-sm text-gray-700">I accept the <a href="#privacy" class="text-[#2c3c94] underline">privacy policy</a></label>
+      </div>
+
+      <div class="flex justify-center">
+        <button type="submit" class="bg-[#2c3c94] text-white px-6 py-3 rounded font-semibold hover:bg-[#1b2969] transition">
+          Send Message
+        </button>
+      </div>
+    </form>
+
+    <p id="status-message" class="mt-4 text-center text-sm text-green-600 hidden">Your message has been sent successfully!</p>
+  </div>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/message/DA5LUB7WX75TM1" 
+   class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg animate-bounce hover:scale-105 transition-transform"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp">
+  <!-- WhatsApp SVG Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="28" height="28">
+    <path d="M12.01 2C6.49 2 2 6.48 2 11.99c0 2.12.67 4.08 1.81 5.72L2 22l4.39-1.76A10 10 0 1 0 12.01 2Zm0 18.13c-1.74 0-3.37-.5-4.74-1.36l-.34-.22-2.6.97.93-2.51-.22-.35A7.9 7.9 0 0 1 4.1 12c0-4.37 3.56-7.92 7.91-7.92 4.36 0 7.91 3.55 7.91 7.92s-3.55 7.91-7.91 7.91Zm4.29-5.89c-.22-.11-1.29-.63-1.49-.7-.2-.07-.35-.11-.5.11s-.57.7-.7.85c-.13.15-.26.17-.48.06a6.37 6.37 0 0 1-3.09-2.68c-.23-.4.23-.37.65-1.23.07-.15.04-.27-.02-.38s-.5-1.2-.68-1.64c-.18-.43-.36-.37-.5-.37-.13 0-.28 0-.42 0-.14 0-.38.05-.58.27s-.76.74-.76 1.8c0 1.06.78 2.1.88 2.25.11.15 1.53 2.35 3.72 3.3.52.22.92.36 1.24.46.52.16.99.14 1.37.09.42-.06 1.29-.52 1.47-1.01.18-.5.18-.93.13-1.01-.05-.09-.2-.14-.42-.25Z"/>
+  </svg>
+</a>
+<!-- Instagram Floating Button -->
+<a href="https://www.instagram.com/clanert.tz?igsh=MXBld3gzajI1MzVpZQ=="
+   class="fixed bottom-24 right-6 z-50 bg-gradient-to-tr from-pink-500 via-red-500 to-yellow-500 text-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Visit Instagram">
+  <!-- Instagram SVG Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" width="28" height="28">
+    <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.75 2.75a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-1.5 0v-.01a.75.75 0 0 1 .75-.75ZM12 7.25a4.75 4.75 0 1 1 0 9.5 4.75 4.75 0 0 1 0-9.5Zm0 1.5a3.25 3.25 0 1 0 0 6.5 3.25 3.25 0 0 0 0-6.5Z"/>
+  </svg>
+</a>
+
+
+<!-- EmailJS & JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init('-tFSHMIHBy8JI7Ihh'); // Your public key
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    const form = document.getElementById('contact-form');
+    const statusMessage = document.getElementById('status-message');
+
+    emailjs.sendForm('service_zla7e4b', 'template_oddb15j', form)
+      .then(() => {
+        statusMessage.classList.remove('hidden');
+        form.reset();
+      })
+      .catch((error) => {
+        alert("Message failed to send: " + error.text);
+      });
+  }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const nav = document.querySelector('header');
+    const navBar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('nav a');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const toggleIcon = document.querySelector('#hamburger-icon');
+
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    window.addEventListener('click', function (e) {
+      if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+
+    // Scroll behavior
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 50) {
+        nav.classList.add('bg-white', 'shadow-md');
+        navBar.classList.remove('bg-transparent');
+        navBar.classList.add('bg-white');
+        navLinks.forEach(link => {
+          link.classList.remove('text-white');
+          link.classList.add('text-[#8bc33c]');
+        });
+        toggleIcon.classList.remove('text-[#8bc33c]');
+        toggleIcon.classList.add('text-[#2c3c94]');
+      } else {
+        nav.classList.remove('bg-white', 'shadow-md');
+        navBar.classList.add('bg-transparent');
+        navBar.classList.remove('bg-white');
+        navLinks.forEach(link => {
+          link.classList.remove('text-[#8bc33c]');
+          link.classList.add('text-white');
+        });
+        toggleIcon.classList.remove('text-[#2c3c94]');
+        toggleIcon.classList.add('text-[#8bc33c]');
+      }
+    });
+  });
+</script>
+
+<!-- Heroicons CDN -->
+<script src="https://unpkg.com/feather-icons"></script>
+
+<footer class="bg-[#2c3c94] text-white pt-12 pb-6">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <!-- Company Info -->
+    <div>
+      <h3 class="text-xl font-semibold mb-4">Clanert Sustain</h3>
+      <p class="text-sm text-gray-200 leading-relaxed">
+        We provide cutting-edge solutions in air and noise, monitoring — supporting sustainable development across Tanzania with innovation, training, and technical partnerships.
+      </p>
+    </div>
+
+    <!-- Governmental Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3">Strategic Alignment</h4>
+      <ul class="space-y-2 text-sm text-gray-200">
+        <li><a href="https://www.nemc.or.tz/" target="_blank" class="hover:text-[#8bc33c] transition">National Environment Management Council (NEMC)</a></li>
+        <li><a href="https://www.nbs.go.tz/" target="_blank" class="hover:text-[#8bc33c] transition">National Bureau of Statistics (NBS)</a></li>
+        <li><a href="https://www.tbs.go.tz/" target="_blank" class="hover:text-[#8bc33c] transition">Tanzania Bureau of Standards (TBS)</a></li>
+        <li><a href="https://www.meteo.go.tz/" target="_blank" class="hover:text-[#8bc33c] transition">Tanzania Meteorological Authority (TMA)</a></li>
+        <li><a href="https://www.vpo.go.tz/" target="_blank" class="hover:text-[#8bc33c] transition">Vice President’s Office – Environment</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3">Contact</h4>
+      <ul class="text-sm text-gray-200 space-y-2">
+        <li><strong>Email:</strong> <a href="mailto:info@clanertsustain.co.tz" class="hover:text-[#8bc33c] transition">info@clanertsustain.co.tz</a></li>
+        <li><strong>Phone:</strong> +255 621 667 315 / +255 659 897 208</li>
+        <li><strong>Location:</strong> Mbezi, Dar es Salaam, Tanzania</li>
+        <li><strong>Website:</strong> <a href="https://www.clanertsustain.co.tz" class="hover:text-[#8bc33c] transition">clanertsustain.co.tz</a></li>
+      </ul>
+    </div>
+
+    <!-- Sustainability Focus -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3">Sustainability Focus</h4>
+      <ul class="space-y-3 text-sm text-gray-200">
+        <li class="flex items-center gap-2 hover:text-[#8bc33c] transition"><i data-feather="wind"></i> Climate-smart Solutions</li>
+        <li class="flex items-center gap-2 hover:text-[#8bc33c] transition"><i data-feather="activity"></i> Pollution Monitoring</li>
+        <li class="flex items-center gap-2 hover:text-[#8bc33c] transition"><i data-feather="trending-up"></i> Environmental Auditing</li>
+        <li class="flex items-center gap-2 hover:text-[#8bc33c] transition"><i data-feather="trash-2"></i> Sustainable Waste Management</li>
+        <li class="flex items-center gap-2 hover:text-[#8bc33c] transition"><i data-feather="users"></i> Research & Training</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="border-t border-[#4d5fc1] mt-10 pt-6 text-center text-gray-300 text-sm">
+    © 2025 Clanert Sustain. All rights reserved. | Designed by Clanert Digital
+  </div>
+</footer>
+
+<!-- Activate Feather Icons -->
+<script>feather.replace();</script>
